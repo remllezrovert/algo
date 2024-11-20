@@ -1,0 +1,113 @@
+****************** Sorting Strings ******************
+
+Original order of strings: [abc, xyzw, xyzab, abcdx, wxcdx, abcxy, aac, wxcdx, abcx, abc]
+Radix-sorted order of strings: [aac, abc, abc, abcdx, abcx, abcxy, wxcdx, wxcdx, xyzab, xyzw]
+
+****************** Huffman Encoding ******************
+
+alphabet: [A, B, C, D, E, F, G, H]
+frequencies: [196, 656, 492, 984, 164, 65, 262, 459]
+
+ASCII encoding needs 26224 bits.
+Fixed length encoding needs 9922 bits.
+Huffman encoding needs 8939 bits.
+Huffman Encoding: A(0110); B(00); C(101); D(11); E(01111); F(01110); G(010); H(100)
+
+alphabet: [A, B, C, D, E, F]
+frequencies: [80, 140, 280, 400, 480, 620]
+
+ASCII encoding needs 16000 bits.
+Fixed length encoding needs 6066 bits.
+Huffman encoding needs 4785 bits.
+Huffman Encoding: A(1000); B(1001); C(101); D(00); E(01); F(11)
+
+alphabet: [A, B, C, D, E, F, G, H]
+frequencies: [8000, 14000, 24000, 40000, 36000, 52000, 22000, 4000]
+
+ASCII encoding needs 1600000 bits.
+Fixed length encoding needs 600088 bits.
+Huffman encoding needs 546091 bits.
+Huffman Encoding: A(11001); B(1101); C(011); D(00); E(111); F(10); G(010); H(11000)
+
+alphabet: [A, B, C, D, E, F, G, H]
+frequencies: [25000, 25000, 25000, 25000, 25000, 25000, 25000, 25000]
+
+ASCII encoding needs 1600000 bits.
+Fixed length encoding needs 600088 bits.
+Huffman encoding needs 600088 bits.
+Huffman Encoding: A(000); B(001); C(100); D(101); E(110); F(111); G(010); H(011)
+
+****************** Huffman Decoding ******************
+
+Original Message: BCCABBDDAECCBBAEDDCC
+
+alphabet: [A, B, C, D, E]
+frequencies: [3, 5, 6, 4, 2]
+
+ASCII encoding needs 160 bits.
+Fixed length encoding needs 115 bits.
+Huffman encoding needs 97 bits.
+Huffman Encoding: A(011); B(10); C(11); D(00); E(010)
+
+Encoded Message: 101111011101000000110101111101001101000001111
+Decoded Message: BCCABBDDAECCBBAEDDCC
+
+****************** Interval Scheduling ******************
+
+The intervals are: [(a, 0, 6), (b, 1, 4), (c, 3, 5), (d, 3, 8), (e, 4, 7), (f, 5, 9), (g, 6, 10), (h, 8, 11)]
+Selected intervals are: [(b, 1, 4), (e, 4, 7), (h, 8, 11)]
+
+The intervals are: [(a, 0, 4), (b, 1, 2), (c, 2, 4), (d, 3, 5), (e, 3, 6), (f, 5, 6), (g, 6, 8), (h, 6, 7), (i, 7, 9), (j, 8, 10)]
+Selected intervals are: [(b, 1, 2), (c, 2, 4), (f, 5, 6), (h, 6, 7), (i, 7, 9)]
+
+The intervals are: [(a, 0, 3), (b, 1, 4), (c, 3, 6), (d, 3, 8), (e, 4, 7), (f, 5, 9), (g, 6, 10), (h, 10, 11)]
+Selected intervals are: [(a, 0, 3), (c, 3, 6), (g, 6, 10), (h, 10, 11)]
+
+****************** Interval Coloring ******************
+
+The intervals are: [(a, 0, 6), (h, 8, 11), (d, 3, 8), (e, 4, 7), (f, 5, 9), (c, 3, 5), (g, 6, 10), (b, 1, 4)]
+Number of colors needed to paint the interval with no overlapping colors: 4
+
+The intervals are: [(a, 0, 4), (e, 3, 6), (d, 1, 5), (f, 5, 6), (h, 6, 7), (i, 7, 9), (j, 1, 10), (g, 6, 7), (b, 1, 2), (c, 2, 4)]
+Number of colors needed to paint the interval with no overlapping colors: 5
+
+The intervals are: [(a, 0, 6), (h, 8, 11), (d, 4, 8), (e, 6, 7), (f, 5, 9), (c, 3, 5), (g, 8, 10), (b, 1, 4)]
+Number of colors needed to paint the interval with no overlapping colors: 3
+
+****************** k-Heavy Hitters ******************
+
+2-heavy hitters: []
+One-pass Misra Gries: [9]
+Two-pass Misra Gries: []
+
+3-heavy hitters: []
+One-pass Misra Gries: [3, 9]
+Two-pass Misra Gries: []
+
+4-heavy hitters: [3]
+One-pass Misra Gries: [3, 9]
+Two-pass Misra Gries: [3]
+
+5-heavy hitters: [3, 9]
+One-pass Misra Gries: [3, 9]
+Two-pass Misra Gries: [3, 9]
+
+6-heavy hitters: [3, 9]
+One-pass Misra Gries: [3, 5, 9]
+Two-pass Misra Gries: [3, 9]
+
+7-heavy hitters: [3, 5, 9]
+One-pass Misra Gries: [0, 3, 4, 5, 9]
+Two-pass Misra Gries: [3, 5, 9]
+
+8-heavy hitters: [3, 5, 9]
+One-pass Misra Gries: [3, 4, 5, 9]
+Two-pass Misra Gries: [3, 5, 9]
+
+9-heavy hitters: [3, 5, 9]
+One-pass Misra Gries: [0, 1, 2, 3, 4, 5, 8, 9]
+Two-pass Misra Gries: [3, 5, 9]
+
+10-heavy hitters: [3, 4, 5, 9]
+One-pass Misra Gries: [0, 1, 2, 3, 4, 5, 8, 9]
+Two-pass Misra Gries: [3, 4, 5, 9]

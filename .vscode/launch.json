@@ -6,6 +6,27 @@
     "configurations": [
         {
             "type": "java",
+            "name": "TestCorrectness",
+            "request": "launch",
+            "mainClass": "TestCorrectness",
+            "projectName": ""
+        },
+        {
+            "type": "java",
+            "name": "TestTime",
+            "request": "launch",
+            "mainClass": "wk7.TestTime",
+            "projectName": ""
+        },
+        {
+            "type": "java",
+            "name": "TestCorrectness",
+            "request": "launch",
+            "mainClass": "wk7.TestCorrectness",
+            "projectName": ""
+        },
+        {
+            "type": "java",
             "name": "Current File",
             "request": "launch",
             "mainClass": "${file}"
