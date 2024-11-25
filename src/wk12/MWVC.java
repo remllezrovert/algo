@@ -26,21 +26,20 @@ public class MWVC extends Tree {
 		int incl = weights[node];
 		ArrayList<Integer> children = adjList.get(node);
 		for (int child: children){
-			excl = excl + weights[child];
-            incl = incl + weights[child];
-			//incl = incl + computeSum(child);
+			excl += weights[child];
+			incl += computeSum(child);
 
-			//ArrayList<Integer> grandChildren = adjList.get(child);
-			//for (int grandChild: grandChildren){
-				//excl = excl + computeSum(grandChild);
-			//}
+			ArrayList<Integer> grandChildren = adjList.get(child);
+			for (int grandChild: grandChildren){
+				excl = excl + computeSum(grandChild);
+			}
 		};
 
 		if (incl <= excl){
 			computedSum[node] = incl;
-			isIncludedSumLarger[node] = true;
 		} else {
             computedSum[node] = excl;
+			isIncludedSumLarger[node] = true;
         }
 		return computedSum[node];
 
@@ -51,9 +50,7 @@ public class MWVC extends Tree {
 		if (!isIncludedSumLarger[root])		{
 			isInSet[root] = true;
 		}
-		adjList.get(root).forEach((child)->{
-			computeSetHelper(child,root);
-		});
+		adjList.get(root).forEach((child)->computeSetHelper(child,root));
 
     }
 
@@ -61,9 +58,7 @@ public class MWVC extends Tree {
 	if (!isIncludedSumLarger[node] || !isInSet[parent]){
 			isInSet[node] = true;
 		}
-		adjList.get(node).forEach((child)->{
-			computeSetHelper(child,node);
-		});
+		adjList.get(node).forEach((child)->computeSetHelper(child,node));
 
 	}
 

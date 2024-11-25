@@ -4,12 +4,11 @@ import java.util.Arrays;
 
 public class LCS {
 
-	public static String longestCommonSubstring(final String x, final String y) { // complete this method
+public static String longestCommonSubstring(final String x, final String y) {// complete this method
+
     int lenx = x.length(), leny = y.length();
-    int prevRow[] = new int[leny + 1];
-    int current[] = new int[leny + 1];
-    Arrays.fill(prevRow, 0);
-    Arrays.fill(current, 0);
+    int[] prevRow = new int[leny + 1];
+    int[] current = new int[leny + 1];
     int maxLen = 0;
     int maxJ = 0;
 
@@ -17,19 +16,25 @@ public class LCS {
         for (int j = 1; j <= leny; j++) {
             if (x.charAt(i - 1) == y.charAt(j - 1)) {
                 current[j] = prevRow[j - 1] + 1;
-                maxLen = current[j];
-                maxJ = j;
+                if (current[j] > maxLen) {
+                    maxLen = current[j];
+                    maxJ = i;
+                }
             } else {
                 current[j] = 0;
             }
         }
-        prevRow = Arrays.copyOf(current, leny + 1);
+        int[] temp = prevRow;
+        prevRow = current;
+        current = temp;
     }
-
-    return y.substring(maxJ - maxLen, maxJ); // Corrected the substring extraction
+        return x.substring(maxJ - maxLen, maxJ);
 }
 
-	public static String longestCommonSubsequence(final String x, final String y) {
+
+
+	public static String longestCommonSubsequence(final String x, final String y) {// complete this method
+
 		int lenx = x.length(), leny = y.length();
 				int[][] length = new int[lenx + 1][leny + 1];
 		for (int i = 0; i <= lenx; i++)
